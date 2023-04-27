@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import WilderCard from "../WilderCard/WilderCard";
+import styles from "./Wilders.module.css";
 
 function Wilders() {
   const [wilders, setWilders] = useState([]);
@@ -16,8 +17,11 @@ function Wilders() {
   }, []);
 
   return (
-    <>
+    <div className={styles.container}>
+      <div className={styles.title}>
       <h2>Wilders</h2>
+      </div>
+      <div className={styles.card}>
       {wilders.map((wilder) => (
         <WilderCard
           key={wilder.id}
@@ -25,8 +29,10 @@ function Wilders() {
           city={wilder.city}
           skills={wilder.skills}
         />
+        
       ))}
-    </>
+      </div>
+    </div>
   );
 }
 

@@ -1,3 +1,4 @@
+import styles from './AddWilder.module.css';
 import axios from "axios";
 import { useState } from "react";
 
@@ -6,6 +7,8 @@ const AddWilder = () => {
   const [city, setCity] = useState("");
 
   return (
+    <>
+    <h2>Ajouter un wilder</h2>
     <form
       onSubmit={(e) => {
         e.preventDefault();
@@ -31,8 +34,8 @@ const AddWilder = () => {
       />
       <br />
       <button>Add Wilder</button>
-      
     </form>
+    </>
   );
 };
 
