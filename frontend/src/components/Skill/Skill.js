@@ -1,4 +1,6 @@
 import styles from "./Skill.module.css";
+import PropTypes from "prop-types";
+
 function Skill({ title, votes }) {
   return (
     <div className={styles.skill}>
@@ -6,4 +8,11 @@ function Skill({ title, votes }) {
     </div>
   );
 }
+
+Skill.propTypes = {
+  votes: PropTypes.number,
+  title: PropTypes.string,
+};
+
+
 export default Skill;

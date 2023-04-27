@@ -1,8 +1,9 @@
 import styles from "./WilderCard.module.css";
 import avatar from "../../assets/avatar.png";
 import Skill from "../Skill/Skill";
+import PropTypes from "prop-types";
 
-function WilderCard({ name, city, skills, grade }) {
+function WilderCard({ name, city, skills }) {
   return (
     <section className={styles.cardrow}>
       <article className={styles.card}>
@@ -25,6 +26,12 @@ function WilderCard({ name, city, skills, grade }) {
       </article>
     </section>
   );
-}
+}; 
+
+WilderCard.propTypes = {
+  name: PropTypes.string,
+  city: PropTypes.string,
+  skills: PropTypes.array,
+};
 
 export default WilderCard;
