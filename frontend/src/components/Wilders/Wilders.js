@@ -23,10 +23,10 @@ function Wilders() {
           key={wilder.id}
           name={wilder.name}
           city={wilder.city}
-          skills={wilder.skills}
-          grade={wilder.votes}
+          skills={wilder.skills.title}
+          grade={wilder.skills.votes}
         />
-      ))};
+      ))}
     </>
   );
 }
