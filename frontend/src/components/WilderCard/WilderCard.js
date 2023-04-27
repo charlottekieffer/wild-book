@@ -16,9 +16,11 @@ function WilderCard({ name, city, skills, grade }) {
         </p>
         <h4>Wild Skills</h4>
         <ul>
-          <li>
-            <Skill skill={skills} grade={grade} />
-          </li>
+            {skills.map((skill) => {
+              return <li><Skill title={skill.title} votes={skill.votes} /></li>
+            })}
+            
+
         </ul>
       </article>
     </section>

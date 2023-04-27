@@ -1,8 +1,8 @@
 import styles from "./Skill.module.css";
-function Skill({ skill, grade }) {
+function Skill({ title, votes }) {
   return (
     <div className={styles.skill}>
-      <span>{skill} <button type="button" className={styles.button}>{grade}</button></span>
+      <span>{title} <button type="button" className={styles.button}>{votes}</button></span>
     </div>
   );
 }

@@ -23,8 +23,7 @@ function Wilders() {
           key={wilder.id}
           name={wilder.name}
           city={wilder.city}
-          skills={wilder.skills.title}
-          grade={wilder.skills.votes}
+          skills={wilder.skills}
         />
       ))}
     </>
