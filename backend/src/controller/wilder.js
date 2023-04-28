@@ -58,6 +58,10 @@ module.exports = {
     },
     delete: async (req, res) => {
         try {
+            console.log(req.body);
+            await dataSource
+            .getRepository(Grade)
+            .delete(req.body)
             await dataSource
             .getRepository(Wilder)
             .delete(req.body)

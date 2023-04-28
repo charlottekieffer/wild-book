@@ -16,16 +16,16 @@ function Wilders() {
 
     fetchData();
   }, []);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <h2>Wilders</h2>
       </div>
       <div className={styles.card}>
-        {wilders.map((wilder) => (
+        {wilders?.map((wilder) => (
           <WilderCard
             key={wilder.id}
+            id={wilder.id}
             name={wilder.name}
             city={wilder.city}
             skills={wilder.skills}
@@ -38,6 +38,7 @@ function Wilders() {
 
 Wilders.propTypes = {
   key: PropTypes.number,
+  id:PropTypes.number,
   name: PropTypes.string,
   city: PropTypes.string,
   skills: PropTypes.array,

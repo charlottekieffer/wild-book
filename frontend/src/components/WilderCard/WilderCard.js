@@ -2,8 +2,15 @@ import styles from "./WilderCard.module.css";
 import avatar from "../../assets/avatar.png";
 import Skill from "../Skill/Skill";
 import PropTypes from "prop-types";
+import axios from "axios";
 
-function WilderCard({ name, city, skills }) {
+function WilderCard({ id, name, city, skills }) {
+
+    const deleteWilder = async () => {
+      await axios.delete("http://localhost:5000/api/wilder", { data: { id: id } });
+    };
+
+
   return (
     <section className={styles.cardrow}>
       <article className={styles.card}>
@@ -20,15 +27,15 @@ function WilderCard({ name, city, skills }) {
             {skills.map((skill) => {
               return <li><Skill title={skill.title} votes={skill.votes} /></li>
             })}
-            
-
         </ul>
+        <button type="button" onClick={deleteWilder}>Delete Wilder</button>
       </article>
     </section>
   );
 }; 
 
 WilderCard.propTypes = {
+  key: PropTypes.number,
   name: PropTypes.string,
   city: PropTypes.string,
   skills: PropTypes.array,
